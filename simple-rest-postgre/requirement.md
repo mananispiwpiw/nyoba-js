@@ -4,6 +4,7 @@
 
 1. Node.js and npm installed on your computer.
 2. Basic knowledge of JavaScript.
+3. Express, Sequelize, pg.
 
 **Steps:**
 

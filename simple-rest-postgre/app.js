@@ -1,3 +1,12 @@
+//Database
+const { Sequelize } = require("sequelize");
+
+const sequelize = new Sequelize("postgres", "postgres", "123", {
+  host: "localhost",
+  dialect: "postgres",
+});
+
+//Server
 var express = require("express");
 var app = express();
 

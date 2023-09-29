@@ -1,4 +1,4 @@
-Absolutely, here's a summary of the steps and what to do at each step without providing the actual code:
+# Simple REST API
 
 **Step 1: Initialize Your Project**
 

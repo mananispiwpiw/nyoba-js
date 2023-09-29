@@ -11,8 +11,9 @@
   "license": "ISC",
   "prettier": {
     "printWidth": 100,
-    "semi": false,
+    "semi": true,
     "singleQuote": true,
     "trailingComma": "all"
-  }
+  },
+  "type": "module"
 }

@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "name": "Product 1",
+      "price": 19.99,
+      "description": "This is the description of Product 1. It's a great product for your needs."
+    },
+    {
+      "name": "Product 2",
+      "price": 29.99,
+      "description": "Product 2 is designed for exceptional performance and quality."
+    },
+    {
+      "name": "Product 3",
+      "price": 14.99,
+      "description": "Introducing Product 3, a budget-friendly option for your everyday needs."
+    },
+    {
+      "name": "Product 4",
+      "price": 49.99,
+      "description": "Product 4 is the ultimate choice for those seeking advanced features."
+    },
+    {
+      "name": "Product 5",
+      "price": 9.99,
+      "description": "An affordable and reliable option, Product 5 has you covered."
+    }
+  ]
+}

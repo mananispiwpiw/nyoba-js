@@ -1,21 +1,16 @@
 import http from 'node:http';
+import { getProducts } from '../simple-rest-basic-module/controllers/productController.js';
 
-var httpPort = 8080;
+const server = http.createServer((req, res) => {
+    if (req.url === '/api/products' && req.method === 'GET') {
+        getProducts(req, res);
+    } else {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.write(JSON.stringify({ message: 'Route not found' }));
+        res.end();
+    }
+});
 
-function handler(req, res) {
-  var clientIP = req.connection.remoteAddress;
-  var connectUsing = req.connection.encrypted ? 'SSL' : 'HTTP';
-  console.log('Request received: ' + connectUsing + ' ' + req.method + ' ' + req.url);
-  console.log('Client IP: ' + clientIP);
+const PORT = process.env.PORT || 8080;
 
-  res.writeHead(200, 'OK', { 'Content-type': 'text/plain' });
-  res.write('OK');
-  res.end();
-  return;
-}
-
-function start_callback() {
-  console.log('Start HTTP on port ' + httpPort);
-}
-
-http.createServer(handler).listen(httpPort, start_callback);
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

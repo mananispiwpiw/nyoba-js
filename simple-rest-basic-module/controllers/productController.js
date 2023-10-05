@@ -1,6 +1,6 @@
-import Product from '../models/productModel.js';
+const Product = require('../models/productModel');
 
-// @desc    Gets all products/items
+// @desc    Gets All Products
 // @route   GET /api/products
 async function getProducts(req, res) {
     try {
@@ -14,15 +14,15 @@ async function getProducts(req, res) {
     }
 }
 
-// @desc    Gets single product/item
-// @route   GET /api/product/id
-async function getProduct(req, res) {
+// @desc    Gets Single Products
+// @route   GET /api/products/:id
+async function getProduct(req, res, id) {
     try {
-        const product = await Product.findByID();
+        const product = await Product.findById(id);
 
         if (!product) {
             res.writeHead(404, { 'Content-Type': 'application/json' });
-            res.write(JSON.stringify({ message: 'Product not found.' }));
+            res.write(JSON.stringify({ message: 'Product not found' }));
             res.end();
         } else {
             res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -34,4 +34,7 @@ async function getProduct(req, res) {
     }
 }
 
-export { getProducts };
+module.exports = {
+    getProducts,
+    getProduct,
+};

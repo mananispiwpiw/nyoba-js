@@ -1,4 +1,4 @@
-import products from '../products.json' assert { type: 'json' };
+const products = require('../data/products.json');
 
 function findAll() {
     return new Promise((resolve, reject) => {
@@ -6,7 +6,14 @@ function findAll() {
     });
 }
 
-//export { findAll };
+function findById(id) {
+    return new Promise((resolve, reject) => {
+        const product = products.find((p) => p.id === id);
+        resolve(product);
+    });
+}
 
-const Product = { findAll };
-export default Product;
+module.exports = {
+    findAll,
+    findById,
+};

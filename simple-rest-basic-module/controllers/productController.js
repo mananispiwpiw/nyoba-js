@@ -102,7 +102,7 @@ async function deleteProduct(req, res, id) {
             res.end();
         } else {
             await Product.remove(id);
-            res.write(JSON.stringify({ message: `Product {id} has been deleted.` }));
+            res.write(JSON.stringify({ message: `Product ${id} has been deleted.` }));
             res.end();
         }
     } catch (error) {
